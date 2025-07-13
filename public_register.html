@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | Zowi Branding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .register-container { max-width:350px; margin:100px auto; padding:32px; background:#fff; border-radius:8px; box-shadow:0 2px 20px rgba(0,0,0,0.08);}
+    .register-container input { width:100%; padding:12px; margin:10px 0; border-radius:4px; border:1px solid #ccc;}
+    .register-container button { width:100%; background:#036104; color:#fff; padding:12px; border:none; border-radius:5px; font-size:1em; }
+    .register-error { color:#b30000; margin-bottom:10px; }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Register</h2>
+    <div class="register-error" id="registerError" style="display:none;"></div>
+    <form id="registerForm">
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" maxlength="12" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <label for="password">Password (4 digits):</label>
+      <input type="password" id="password" maxlength="4" required>
+      <button type="submit">Register</button>
+    </form>
+    <p style="margin-top:12px; color:#444; font-size:0.96em;">Registration fee: <b>100 Birr</b>.<br>You will get your referral passkey after payment.</p>
+  </div>
+<script>
+document.getElementById('registerForm').onsubmit = async function(e) {
+  e.preventDefault();
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const res = await fetch('/register', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ phone, email, password })
+  });
+  const data = await res.json();
+  if(data.success) {
+    // Redirect to payment page
+    window.location.href = data.payment_url;
+  } else {
+    document.getElementById('registerError').style.display = 'block';
+    document.getElementById('registerError').textContent = data.error || "Registration failed";
+  }
+};
+</script>
+</body>
+</html>

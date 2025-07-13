@@ -1,0 +1,150 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f4f8f6;
+  color: #222;
+}
+header {
+  background: #036104;
+  color: #fff;
+  padding: 30px 10px 15px 10px;
+  text-align: center;
+}
+nav {
+  background: #75002b;
+  padding: 12px 0;
+  text-align: center;
+}
+nav a {
+  color: #fff;
+  margin: 0 14px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+nav a.active,
+nav a:hover {
+  background: #c3185b;
+}
+main {
+  padding: 28px 8vw 38px 8vw;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  margin-top: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.hero {
+  background: #e9fbe8;
+  padding: 30px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.hero h2 {
+  margin-top: 0;
+  color: #036104;
+  font-size: 2em;
+}
+.hero .cta-button {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 28px;
+  background: #75002b;
+  color: #fff;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 28px;
+  text-decoration: none;
+  box-shadow: 0 1px 8px rgba(117,0,43,0.08);
+  transition: background 0.2s;
+}
+.hero .cta-button:hover {
+  background: #c3185b;
+}
+
+.cta-button, .secondary-button {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 10px 24px;
+  background: #036104;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.cta-button:hover, .secondary-button:hover {
+  background: #048e07;
+}
+
+.secondary-button {
+  background: #75002b;
+}
+.secondary-button:hover {
+  background: #c3185b;
+}
+
+.apply-section {
+  margin: 36px 0;
+  text-align: center;
+}
+.telegram-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background: #229ed9;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.telegram-link:hover {
+  background: #157ea5;
+}
+.telegram-section {
+  margin-top: 36px;
+  text-align: center;
+}
+section {
+  margin-bottom: 30px;
+}
+ul {
+  padding-left: 1.3em;
+}
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 18px 0 12px 0;
+  font-size: 1em;
+  color: #444;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 16px 2vw 22px 2vw;
+    margin-top: 10px;
+    margin-bottom: 14px;
+  }
+  .hero {
+    padding: 18px 6px;
+  }
+  nav a {
+    margin: 0 6px;
+    padding: 6px 7px;
+    font-size: 1em;
+  }
+  h1, h2, h3 {
+    font-size: 1.1em;
+  }
+}
